@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-skaffold-demo
+spec:
+  selector:
+    matchLabels:
+      app: k8s-skaffold-demo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: k8s-skaffold-demo
+    spec:
+      containers:
+        - name: k8s-skaffold-demo
+          image: k8s-skaffold-demo
+          ports:
+            - containerPort: 8080
